@@ -85,8 +85,24 @@
                         </div>
                         <p class="text-muted small">Этому серверу не будет разрешено загружаться, если он использует больше этого пространства. Если сервер превысит этот лимит во время работы, он будет безопасно остановлен и заблокирован до тех пор, пока не освободится достаточно места на диске.</p>
                     </div>
-                </div>
-            </div>
+                    <div class="form-group">
+                        <label for="cpu" class="control-label">OOM Killer</label>
+                        <div>
+                            <div class="radio radio-danger radio-inline">
+                                <input type="radio" id="pOomKillerEnabled" value="0" name="oom_disabled" @if(!$server->oom_disabled)checked @endif>
+                                <label for="pOomKillerEnabled">Включен</label>
+                            </div>
+                            <div class="radio radio-success radio-inline">
+                                <input type="radio" id="pOomKillerDisabled" value="1" name="oom_disabled" @if($server->oom_disabled)checked @endif>
+                                <label for="pOomKillerDisabled">Выключен</label>
+                            </div>
+                            <p class="text-muted small">
+                                Включение OOM killer может привести к неожиданному завершению процессов сервера.
+                            </p>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
         <div class="col-sm-7">
             <div class="row">
