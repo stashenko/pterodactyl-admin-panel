@@ -102,7 +102,7 @@
                     </div>
                     <div class="form-group col-xs-12">
                         <div class="checkbox checkbox-primary no-margin-bottom">
-                            <input id="pSkipScripting" name="skip_scripting" type="checkbox" value="1" @if($server->skip_scripts) checked @endif />
+                            <input id="pSkipScripting" name="skip_scripts" type="checkbox" value="1" @if($server->skip_scripts) checked @endif />
                             <label for="pSkipScripting" class="strong">Пропустить скрипт установки яйца</label>
                         </div>
                         <p class="small text-muted no-margin">Если к выбранному яйцу прикреплен скрипт установки, он будет запущен во время установки после установки пакета. Если вы хотите пропустить этот шаг, установите этот флажок.</p>
