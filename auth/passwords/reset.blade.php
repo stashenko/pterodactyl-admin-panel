@@ -6,7 +6,7 @@
 @extends('layouts.auth')
 
 @section('title')
-    Reset Password
+    Сброс пароля
 @endsection
 
 @section('content')
