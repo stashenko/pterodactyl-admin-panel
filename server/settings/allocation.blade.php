@@ -103,11 +103,11 @@
                         self.removeClass('btn-default').addClass('btn-success disabled').html('{{ trans('strings.primary') }}');
                     }).fail(function(jqXHR) {
                         console.error(jqXHR);
-                        var error = 'An error occurred while trying to process this request.';
+                        var error = 'Произошла ошибка при попытке обработать этот запрос.';
                         if (typeof jqXHR.responseJSON !== 'undefined' && typeof jqXHR.responseJSON.error !== 'undefined') {
                             error = jqXHR.responseJSON.error;
                         }
-                        swal({type: 'error', title: 'Whoops!', text: error});
+                        swal({type: 'error', title: 'Упссс!', text: error});
                     }).always(function () {
                         triggerClickHandler();
                         $('#toggleActivityOverlay').addClass('hidden');
