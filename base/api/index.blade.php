@@ -86,12 +86,12 @@
             event.preventDefault();
             swal({
                 type: 'error',
-                title: 'Revoke API Key',
-                text: 'Once this API key is revoked any applications currently using it will stop working.',
+                title: 'Отзыв API-ключа',
+                text: 'Как только этот ключ API будет отозван, все приложения, использующие его, перестанут работать.',
                 showCancelButton: true,
                 allowOutsideClick: true,
                 closeOnConfirm: false,
-                confirmButtonText: 'Revoke',
+                confirmButtonText: 'Отозвать',
                 confirmButtonColor: '#d9534f',
                 showLoaderOnConfirm: true
             }, function () {
@@ -105,15 +105,15 @@
                     swal({
                         type: 'success',
                         title: '',
-                        text: 'API Key has been revoked.'
+                        text: 'Ключ API отозван.'
                     });
                     self.parent().parent().slideUp();
                 }).fail(function (jqXHR) {
                     console.error(jqXHR);
                     swal({
                         type: 'error',
-                        title: 'Whoops!',
-                        text: 'An error occurred while attempting to revoke this key.'
+                        title: 'Упссс!',
+                        text: 'Произошла ошибка при попытке отозвать этот ключ.'
                     });
                 });
             });
