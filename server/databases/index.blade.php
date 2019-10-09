@@ -148,13 +148,13 @@
                     block.parent().parent().find('[data-attr="set-password"]').html(data.password);
                 }).fail(function(jqXHR) {
                     console.error(jqXHR);
-                    var error = 'An error occurred while trying to process this request.';
+                    var error = 'Произошла ошибка при обработке этого запроса.';
                     if (typeof jqXHR.responseJSON !== 'undefined' && typeof jqXHR.responseJSON.error !== 'undefined') {
                         error = jqXHR.responseJSON.error;
                     }
                     swal({
                         type: 'error',
-                        title: 'Whoops!',
+                        title: 'Упссс!',
                         text: error
                     });
                 }).always(function () {
@@ -169,9 +169,9 @@
                 swal({
                     title: '',
                     type: 'warning',
-                    text: 'Are you sure that you want to delete this database? There is no going back, all data will immediately be removed.',
+                    text: 'Вы уверены, что хотите удалить эту базу данных? Обратного пути нет, все данные будут немедленно удалены.',
                     showCancelButton: true,
-                    confirmButtonText: 'Delete',
+                    confirmButtonText: 'Удалить',
                     confirmButtonColor: '#d9534f',
                     closeOnConfirm: false,
                     showLoaderOnConfirm: true,
@@ -187,8 +187,8 @@
                         console.error(jqXHR);
                         swal({
                             type: 'error',
-                            title: 'Whoops!',
-                            text: (typeof jqXHR.responseJSON.error !== 'undefined') ? jqXHR.responseJSON.error : 'An error occurred while processing this request.'
+                            title: 'Упссс!',
+                            text: (typeof jqXHR.responseJSON.error !== 'undefined') ? jqXHR.responseJSON.error : 'Произошла ошибка при обработке этого запроса.'
                         });
                     });
                 });
