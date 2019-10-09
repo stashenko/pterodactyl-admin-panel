@@ -89,8 +89,8 @@
             var self = $(this);
             swal({
                 type: 'warning',
-                title: 'Delete Subuser',
-                text: 'This will immediately remove this user from this server and revoke all permissions.',
+                title: 'Удалить суб-пользователя',
+                text: 'Это немедленно удалит этого пользователя с этого сервера и отменит все разрешения.',
                 showCancelButton: true,
                 showConfirmButton: true,
                 closeOnConfirm: false,
@@ -110,17 +110,17 @@
                     swal({
                         type: 'success',
                         title: '',
-                        text: 'Subuser was successfully deleted.'
+                        text: 'Cуб-пользователь успешно удален.'
                     });
                 }).fail(function (jqXHR) {
                     console.error(jqXHR);
-                    var error = 'An error occurred while trying to process this request.';
+                    var error = 'Произошла ошибка при попытке обработать этот запрос.';
                     if (typeof jqXHR.responseJSON !== 'undefined' && typeof jqXHR.responseJSON.error !== 'undefined') {
                         error = jqXHR.responseJSON.error;
                     }
                     swal({
                         type: 'error',
-                        title: 'Whoops!',
+                        title: 'Упссс!',
                         text: error
                     });
                 });
