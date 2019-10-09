@@ -77,7 +77,7 @@
                         <div class="checkbox checkbox-primary no-margin-bottom">
                             <input id="pSelectable" name="selectable" type="checkbox" value="1" checked/>
                             <label for="pSelectable">
-                                Выбор
+                                Выбираемый
                             </label>
                         </div>
                         <p class="text-muted small">Установите этот флажок, если пользователь должен иметь возможность выбрать этот пакет для установки на своих серверах.</p>
