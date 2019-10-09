@@ -195,12 +195,12 @@
 
                         var that = this;
                         swal({
-                            title: 'Do you want to log out?',
+                            title: 'Вы хотите выйти?',
                             type: 'warning',
                             showCancelButton: true,
                             confirmButtonColor: '#d9534f',
                             cancelButtonColor: '#d33',
-                            confirmButtonText: 'Log out'
+                            confirmButtonText: 'Выйти'
                         }, function () {
                             window.location = $(that).attr('href');
                         });
