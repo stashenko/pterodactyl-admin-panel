@@ -51,19 +51,24 @@
                         <th class="text-center">Процессор</th>
                         <th class="text-center">Статус</th>
                     </tr>
-                    @foreach($node->servers as $server)
+                    @foreach($servers as $server)
                         <tr data-server="{{ $server->uuid }}">
                             <td><code>{{ $server->uuidShort }}</code></td>
                             <td><a href="{{ route('admin.servers.view', $server->id) }}">{{ $server->name }}</a></td>
                             <td><a href="{{ route('admin.users.view', $server->owner_id) }}">{{ $server->user->username }}</a></td>
                             <td>{{ $server->nest->name }} ({{ $server->egg->name }})</td>
-                            <td class="text-center"><span data-action="memory">NaN</span> / {{ $server->memory === 0 ? '∞' : $server->memory }} MB</td>
-                            <td class="text-center">{{ $server->disk }} MB</td>
-                            <td class="text-center"><span data-action="cpu" data-cpumax="{{ $server->cpu }}">NaN</span> %</td>
-                            <td class="text-center" data-action="status">NaN</td>
+                            <td class="text-center"><span data-action="memory">--</span> / {{ $server->memory === 0 ? '∞' : $server->memory }} MB</td>
+                            <td class="text-center"><span data-action="disk">--</span> / {{ $server->disk === 0 ? '∞' : $server->disk }} MB </td>
+							<td class="text-center"><span data-action="cpu" data-cpumax="{{ $server->cpu }}">--</span> %</td>
+                            <td class="text-center" data-action="status">--</td>
                         </tr>
                     @endforeach
                 </table>
+                @if($servers->hasPages())
+                    <div class="box-footer with-border">
+                        <div class="col-md-12 text-center">{!! $servers->render() !!}</div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
