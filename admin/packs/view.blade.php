@@ -29,22 +29,22 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label for="pName" class="form-label">Название</label>
-                        <input name="name" type="text" id="pName" class="form-control" value="{{ $pack->name }}" />
-                        <p class="text-muted small">Краткое, но наглядное название этого пакета. Например, <code>Counter Strike: Source</code>, если это пакет Counter Strike.</p>
+                        <input name="name" type="text" id="pName" class="form-control" value="{{ old('name') }}" />
+                        <p class="text-muted small">Краткое, но наглядное название этого пакета. Например, <code>Counter Strike: Source </code>, если это пакет Counter Strike.</p>
                     </div>
                     <div class="form-group">
                         <label for="pDescription" class="form-label">Описание</label>
-                        <textarea name="description" id="pDescription" class="form-control" rows="8">{{ $pack->description }}</textarea>
+                        <textarea name="description" id="pDescription" class="form-control" rows="8">{{ old('description') }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="pVersion" class="form-label">Версия</label>
-                        <input type="text" name="version" id="pVersion" class="form-control" value="{{ $pack->version }}" />
+                        <input type="text" name="version" id="pVersion" class="form-control" value="{{ old('version') }}" />
                         <p class="text-muted small">Версия этого пакета или версия файлов, содержащихся в пакете.</p>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Место хранения</label>
                         <input type="text" class="form-control" readonly value="{{ storage_path('app/packs/' . $pack->uuid) }}">
-                        <p class="text-muted small">Если вы хотите изменить сохраненный пакет, вам необходимо загрузить новый <code>archive.tar.gz</code> в указанное выше местоположение.</p>
+                        <p class="text-muted small">Если вы хотите изменить сохраненный пакет, вам нужно будет загрузить новый <code>archive.tar.gz</code> в указанное выше местоположение.</p>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                         <div class="checkbox checkbox-primary no-margin-bottom">
                             <input id="pSelectable" name="selectable" type="checkbox" value="1" {{ ! $pack->selectable ?: 'checked' }}/>
                             <label for="pSelectable">
-                                Выбор
+                                Выбираемый
                             </label>
                         </div>
                         <p class="text-muted small">Установите этот флажок, если пользователь должен иметь возможность выбрать этот пакет для установки на своих серверах.</p>
@@ -90,7 +90,7 @@
                         <div class="checkbox checkbox-warning no-margin-bottom">
                             <input id="pLocked" name="locked" type="checkbox" value="1" {{ ! $pack->locked ?: 'checked' }}/>
                             <label for="pLocked">
-                                Скрытый
+                                Заблокированный
                             </label>
                         </div>
                         <p class="text-muted small">Установите этот флажок, если серверы, назначенные этому пакету, не могут переключаться на другой пакет.</p>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="box-footer with-border">
                     {!! csrf_field() !!}
-                    <button name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right" type="submit">Save</button>
+                    <button name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right" type="submit">Сохранить</button>
                     <button name="_method" value="DELETE" class="btn btn-sm btn-danger pull-left muted muted-hover" type="submit"><i class="fa fa-trash-o"></i></button>
                 </div>
             </div>
@@ -140,7 +140,7 @@
         </form>
         <form action="{{ route('admin.packs.view.export', ['id' => $pack->id, 'files' => 'with-files']) }}" method="POST">
             {!! csrf_field() !!}
-            <button type="submit" class="btn btn-sm pull-right muted muted-hover" style="margin-right:10px;">Экспортировать в архив</button>
+            <button type="submit" class="btn btn-sm pull-right muted muted-hover" style="margin-right:10px;">Экспорт в архив</button>
         </form>
     </div>
 </div>
