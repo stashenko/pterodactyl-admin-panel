@@ -207,12 +207,12 @@
         var allocation = $(this).data('id');
         swal({
             title: '',
-            text: 'Are you sure you want to delete this allocation?',
+            text: 'Вы уверены, что хотите удалить это распределение?',
             type: 'warning',
             showCancelButton: true,
             allowOutsideClick: true,
             closeOnConfirm: false,
-            confirmButtonText: 'Delete',
+            confirmButtonText: 'Удалить',
             confirmButtonColor: '#d9534f',
             showLoaderOnConfirm: true
         }, function () {
@@ -226,7 +226,7 @@
             }).fail(function (jqXHR) {
                 console.error(jqXHR);
                 swal({
-                    title: 'Whoops!',
+                    title: 'Упссс!',
                     text: jqXHR.responseJSON.error,
                     type: 'error'
                 });
@@ -312,7 +312,7 @@
             swal({
                 type: 'warning',
                 title: '',
-                text: 'Are you sure you want to delete the following allocations: ' + formattedItems + '?',
+                text: 'Вы уверены, что хотите удалить следующие распределения: ' + formattedItems + '?',
                 html: true,
                 showCancelButton: true,
                 showConfirmButton: true,
@@ -341,15 +341,15 @@
 
                     swal({
                         type: 'success',
-                        title: 'Allocations Deleted'
+                        title: 'Распределение удалено'
                     });
                 }).fail(function (jqXHR) {
                     console.error(jqXHR);
                     swal({
                         type: 'error',
-                        title: 'Whoops!',
+                        title: 'Упссс!',
                         html: true,
-                        text: 'An error occurred while attempting to delete these allocations. Please try again.',
+                        text: 'При попытке удаления этих распределений произошла ошибка. Пожалуйста, попробуйте еще раз.',
                     });
                 });
             });
@@ -357,7 +357,7 @@
             swal({
                 type: 'warning',
                 title: '',
-                text: 'Please select allocation(s) to delete.',
+                text: 'Пожалуйста, выберите распределение(я), чтобы удалить.',
             });
         }
     }
