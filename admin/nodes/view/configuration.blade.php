@@ -70,15 +70,15 @@
         $.getJSON('{{ route('admin.nodes.view.configuration.token', $node->id) }}').done(function (data) {
             swal({
                 type: 'success',
-                title: 'Token created.',
-                text: 'Your token will expire <strong>in 5 minutes.</strong><br /><br />' +
-                      '<p>To auto-configure your node run the following command:<br /><small><pre>npm run configure -- --panel-url {{ config('app.url') }} --token ' + data.token + '</pre></small></p>',
+                title: 'Токен создан.',
+                text: 'Срок действия вашего токена истекает через <strong>5 минут.</strong><br /><br />' +
+                      '<p>Для автоматической настройки вашего узла выполните следующую команду:<br /><small><pre>npm run configure -- --panel-url {{ config('app.url') }} --token ' + data.token + '</pre></small></p>',
                 html: true
             })
         }).fail(function () {
             swal({
-                title: 'Error',
-                text: 'Something went wrong creating your token.',
+                title: 'Ошибка',
+                text: 'Что-то пошло не так при создании вашего токена.',
                 type: 'error'
             });
         });
