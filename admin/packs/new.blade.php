@@ -10,11 +10,11 @@
 @endsection
 
 @section('content-header')
-    <h1>New Pack<small>Create a new pack on the system.</small></h1>
+    <h1>Новый пакет<small>Создайте новый пакет в системе.</small></h1>
     <ol class="breadcrumb">
-        <li><a href="{{ route('admin.index') }}">Admin</a></li>
-        <li><a href="{{ route('admin.packs') }}">Packs</a></li>
-        <li class="active">New</li>
+        <li><a href="{{ route('admin.index') }}">Администратор</a></li>
+        <li><a href="{{ route('admin.packs') }}">Пакеты</a></li>
+        <li class="active">Новый</li>
     </ol>
 @endsection
 
@@ -23,8 +23,8 @@
     <div class="col-xs-12">
         <div class="nav-tabs-custom nav-tabs-floating">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="{{ route('admin.packs.new') }}">Configure Manually</a></li>
-                <li><a href="#modal" id="toggleModal">Install From Template</a></li>
+                <li class="active"><a href="{{ route('admin.packs.new') }}">Настроить вручную</a></li>
+                <li><a href="#modal" id="toggleModal">Установить из шаблона</a></li>
             </ul>
         </div>
     </div>
@@ -34,25 +34,25 @@
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Pack Details</h3>
+                    <h3 class="box-title">Детали пакета</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="pName" class="form-label">Name</label>
+                        <label for="pName" class="form-label">Название</label>
                         <input name="name" type="text" id="pName" class="form-control" value="{{ old('name') }}" />
-                        <p class="text-muted small">A short but descriptive name of what this pack is. For example, <code>Counter Strike: Source</code> if it is a Counter Strike package.</p>
+                        <p class="text-muted small">Краткое, но наглядное название этого пакета. Например, <code>Counter Strike: Source </code>, если это пакет Counter Strike.</p>
                     </div>
                     <div class="form-group">
-                        <label for="pDescription" class="form-label">Description</label>
+                        <label for="pDescription" class="form-label">Описание</label>
                         <textarea name="description" id="pDescription" class="form-control" rows="8">{{ old('description') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="pVersion" class="form-label">Version</label>
+                        <label for="pVersion" class="form-label">Версия</label>
                         <input type="text" name="version" id="pVersion" class="form-control" value="{{ old('version') }}" />
-                        <p class="text-muted small">The version of this package, or the version of the files contained within the package.</p>
+                        <p class="text-muted small">Версия этого пакета или версия файлов, содержащихся в пакете.</p>
                     </div>
                     <div class="form-group">
-                        <label for="pEggId" class="form-label">Associated Egg</label>
+                        <label for="pEggId" class="form-label">Ассоциированное яйцо</label>
                         <select id="pEggId" name="egg_id" class="form-control">
                             @foreach($nests as $nest)
                                 <optgroup label="{{ $nest->name }}">
@@ -62,7 +62,7 @@
                                 </optgroup>
                             @endforeach
                         </select>
-                        <p class="text-muted small">The option that this pack is associated with. Only servers that are assigned this option will be able to access this pack.</p>
+                        <p class="text-muted small">Опция, с которой связан этот пакет. Только серверы, которым назначена эта опция, смогут получить доступ к этому пакету.</p>
                     </div>
                 </div>
             </div>
@@ -70,50 +70,50 @@
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Pack Configuration</h3>
+                    <h3 class="box-title">Конфигурация пакета</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
                         <div class="checkbox checkbox-primary no-margin-bottom">
                             <input id="pSelectable" name="selectable" type="checkbox" value="1" checked/>
                             <label for="pSelectable">
-                                Selectable
+                                Выбор
                             </label>
                         </div>
-                        <p class="text-muted small">Check this box if user should be able to select this pack to install on their servers.</p>
+                        <p class="text-muted small">Установите этот флажок, если пользователь должен иметь возможность выбрать этот пакет для установки на своих серверах.</p>
                     </div>
                     <div class="form-group">
                         <div class="checkbox checkbox-primary no-margin-bottom">
                             <input id="pVisible" name="visible" type="checkbox" value="1" checked/>
                             <label for="pVisible">
-                                Visible
+                                Видимый
                             </label>
                         </div>
-                        <p class="text-muted small">Check this box if this pack is visible in the dropdown menu. If this pack is assigned to a server it will be visible regardless of this setting.</p>
+                        <p class="text-muted small">Установите этот флажок, если этот пакет отображается в раскрывающемся меню. Если этот пакет назначен серверу, он будет виден независимо от этого параметра.</p>
                     </div>
                     <div class="form-group">
                         <div class="checkbox checkbox-warning no-margin-bottom">
                             <input id="pLocked" name="locked" type="checkbox" value="1"/>
                             <label for="pLocked">
-                                Locked
+                                Заблокированный
                             </label>
                         </div>
-                        <p class="text-muted small">Check this box if servers assigned this pack should not be able to switch to a different pack.</p>
+                        <p class="text-muted small">Установите этот флажок, если серверы, назначенные этому пакету, не могут переключаться на другой пакет.</p>
                     </div>
                     <hr />
                     <div class="form-group no-margin-bottom">
-                        <label for="pFileUpload" class="form-label">Pack Archive</label>
+                        <label for="pFileUpload" class="form-label">Архивы пакетов</label>
                         <input type="file" accept=".tar.gz, application/gzip" name="file_upload" class="well well-sm" style="width:100%"/>
-                        <p class="text-muted small">This package file must be a <code>.tar.gz</code> archive of pack files to be decompressed into the server folder.</p>
-                        <p class="text-muted small">If your file is larger than <code>50MB</code> it is recommended to upload it using SFTP. Once you have added this pack to the system, a path will be provided where you should upload the file.</p>
+                        <p class="text-muted small">Этот файл пакета должен быть <code>.tar.gz</code> архивом файлов пакета, который необходимо распаковать в папку на сервере.</p>
+                        <p class="text-muted small">Если размер вашего файла превышает <code>50 МБ</code>, рекомендуется загрузить его с использованием SFTP. После того, как вы добавили этот пакет в систему, будет указан путь, куда вы должны загрузить файл.</p>
                         <div class="callout callout-info callout-slim no-margin-bottom">
-                            <p class="text-muted small"><strong>This server is currently configured with the following limits:</strong><br /><code>upload_max_filesize={{ ini_get('upload_max_filesize') }}</code><br /><code>post_max_size={{ ini_get('post_max_size') }}</code><br /><br />If your file is larger than either of those values this request will fail.</p>
+                            <p class="text-muted small"><strong>Этот сервер в настоящее время настроен со следующими ограничениями:</strong><br /><code>upload_max_filesize={{ ini_get('upload_max_filesize') }}</code><br /><code>post_max_size={{ ini_get('post_max_size') }}</code><br /><br />Если ваш файл больше любого из этих значений, этот запрос не будет выполнен.</p>
                         </div>
                     </div>
                 </div>
                 <div class="box-footer with-border">
                     {!! csrf_field() !!}
-                    <button class="btn btn-sm btn-success pull-right" type="submit">Create Pack</button>
+                    <button class="btn btn-sm btn-success pull-right" type="submit">Создать пакет</button>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@
                 headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
             }).fail(function (jqXhr) {
                 console.error(jqXhr);
-                alert('There was an error trying to create the upload modal.');
+                alert('Произошла ошибка при попытке создать модал загрузки.');
             }).done(function (data) {
                 $(data).modal();
                 $('#pEggIdModal').select2();
