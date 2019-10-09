@@ -139,10 +139,10 @@
         function testSettings() {
             swal({
                 type: 'info',
-                title: 'Test Mail Settings',
-                text: 'Click "Test" to begin the test.',
+                title: 'Тестовые настройки почты',
+                text: 'Нажмите "Тест", чтобы начать тестирование.',
                 showCancelButton: true,
-                confirmButtonText: 'Test',
+                confirmButtonText: 'Тест',
                 closeOnConfirm: false,
                 showLoaderOnConfirm: true
             }, function () {
@@ -154,8 +154,8 @@
                     showErrorDialog(jqXHR, 'test');
                 }).done(function () {
                     swal({
-                        title: 'Success',
-                        text: 'The test message was sent successfully.',
+                        title: 'Успех',
+                        text: 'Тестовое сообщение успешно отправлено.',
                         type: 'success'
                     });
                 });
@@ -182,8 +182,8 @@
             }
 
             swal({
-                title: 'Whoops!',
-                text: 'An error occurred while attempting to ' + verb + ' mail settings: ' + errorText,
+                title: 'Упссс!',
+                text: 'Произошла ошибка при попытке ' + verb + ' настройки почты: ' + errorText,
                 type: 'error'
             });
         }
@@ -193,8 +193,8 @@
             $('#saveButton').on('click', function () {
                 saveSettings().done(function () {
                     swal({
-                        title: 'Success',
-                        text: 'Mail settings have been updated successfully and the queue worker was restarted to apply these changes.',
+                        title: 'Успех',
+                        text: 'Настройки почты были успешно обновлены, и работник очереди был перезапущен для применения этих изменений.',
                         type: 'success'
                     });
                 });
