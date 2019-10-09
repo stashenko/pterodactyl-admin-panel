@@ -99,10 +99,10 @@
                             <p class="text-muted small">
                                 Включение OOM killer может привести к неожиданному завершению процессов сервера.
                             </p>
-						</div>
-					</div>
-				</div>
-			</div>
+                       </div>
+                   </div>
+                </div>
+            </div>
         </div>
         <div class="col-sm-7">
             <div class="row">
