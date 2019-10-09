@@ -6,7 +6,7 @@
 @extends('layouts.auth')
 
 @section('title')
-    2FA Checkpoint
+    2FA Пропускной пункт
 @endsection
 
 @section('scripts')
